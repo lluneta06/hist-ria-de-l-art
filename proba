@@ -1,0 +1,92 @@
+#include <iostream>
+#include <fstream>
+
+void generarPaginaHistoriaDeLArt() {
+    std::ofstream fitxer("historia_de_lart.html");
+
+    if (!fitxer.is_open()) {
+        std::cerr << "Error: No s'ha pogut crear el fitxer HTML." << std::endl;
+        return;
+    }
+
+    fitxer << "<!DOCTYPE html>\n";
+    fitxer << "<html lang=\"ca\">\n";
+    fitxer << "<head>\n";
+    fitxer << "    <meta charset=\"UTF-8\">\n";
+    fitxer << "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n";
+    fitxer << "    <title>Història de l'Art</title>\n";
+    fitxer << "    <style>\n";
+    fitxer << "        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f4f4f9; }\n";
+    fitxer << "        h1 { color: #333366; }\n";
+    fitxer << "        h2 { color: #555588; }\n";
+    fitxer << "        p { line-height: 1.6; color: #333; }\n";
+    fitxer << "        .era { margin-bottom: 20px; }\n";
+    fitxer << "        img { max-width: 100%; height: auto; margin: 10px 0; }\n";
+    fitxer << "        .activity { background-color: #e3e3f2; padding: 10px; margin-top: 10px; border-left: 4px solid #333366; }\n";
+    fitxer << "    </style>\n";
+    fitxer << "</head>\n";
+    fitxer << "<body>\n";
+    fitxer << "    <h1>Història de l'Art</h1>\n";
+    fitxer << "    <p>La història de l'art abasta diferents períodes i estils que reflecteixen el desenvolupament cultural i tecnològic de les civilitzacions. A continuació es presenta una breu descripció d'alguns dels períodes més importants, amb imatges i activitats.</p>\n";
+
+    // Art prehistòric
+    fitxer << "    <div class=\"era\">\n";
+    fitxer << "        <h2>Art prehistòric</h2>\n";
+    fitxer << "        <img src=\"https://example.com/prehistoric_art.jpg\" alt=\"Pintura rupestre prehistòrica\">\n";
+    fitxer << "        <p>L'art prehistòric inclou les primeres manifestacions artístiques de la humanitat, com les pintures rupestres i les escultures d'animals. Aquest art es troba en coves de diferents regions del món i és conegut per les seves representacions simbòliques.</p>\n";
+    fitxer << "        <div class=\"activity\">\n";
+    fitxer << "            <p><strong>Activitat:</strong> Quins animals creus que podrien haver inspirat els artistes prehistòrics? Escriu tres exemples.</p>\n";
+    fitxer << "        </div>\n";
+    fitxer << "    </div>\n";
+
+    // Art egipci
+    fitxer << "    <div class=\"era\">\n";
+    fitxer << "        <h2>Art egipci</h2>\n";
+    fitxer << "        <img src=\"https://example.com/egyptian_art.jpg\" alt=\"Escultura egípcia antiga\">\n";
+    fitxer << "        <p>L'art egipci es caracteritza per les seves representacions hieràtiques i simbòliques, especialment en temples i tombes. Aquesta època es centra en la religió i la vida després de la mort.</p>\n";
+    fitxer << "        <div class=\"activity\">\n";
+    fitxer << "            <p><strong>Activitat:</strong> Cerca informació sobre els símbols que usaven els egipcis i intenta dibuixar un d'ells.</p>\n";
+    fitxer << "        </div>\n";
+    fitxer << "    </div>\n";
+
+    // Art grec i romà
+    fitxer << "    <div class=\"era\">\n";
+    fitxer << "        <h2>Art grec i romà</h2>\n";
+    fitxer << "        <img src=\"https://example.com/greek_roman_art.jpg\" alt=\"Escultura grega clàssica\">\n";
+    fitxer << "        <p>L'art clàssic grec i romà es distingeix per la seva recerca de la bellesa ideal i el naturalisme. És conegut per escultures, arquitectura i frescos que representen déus, herois i la vida quotidiana.</p>\n";
+    fitxer << "        <div class=\"activity\">\n";
+    fitxer << "            <p><strong>Activitat:</strong> Investiga una deïtat grega o romana i fes una breu descripció de les seves característiques.</p>\n";
+    fitxer << "        </div>\n";
+    fitxer << "    </div>\n";
+
+    // Renaixement
+    fitxer << "    <div class=\"era\">\n";
+    fitxer << "        <h2>Renaixement</h2>\n";
+    fitxer << "        <img src=\"https://example.com/renaissance_art.jpg\" alt=\"Pintura renaixentista\">\n";
+    fitxer << "        <p>Durant el Renaixement, es va produir una gran explosió de creativitat i un interès renovat per les ciències i les arts. L'art d'aquest període busca el realisme i la perspectiva.</p>\n";
+    fitxer << "        <div class=\"activity\">\n";
+    fitxer << "            <p><strong>Activitat:</strong> Observa una pintura del Renaixement i intenta identificar la tècnica de perspectiva. Quins elements hi pots veure en primer pla i en segon pla?</p>\n";
+    fitxer << "        </div>\n";
+    fitxer << "    </div>\n";
+
+    // Modernisme
+    fitxer << "    <div class=\"era\">\n";
+    fitxer << "        <h2>Modernisme</h2>\n";
+    fitxer << "        <img src=\"https://example.com/modern_art.jpg\" alt=\"Pintura modernista\">\n";
+    fitxer << "        <p>El Modernisme trenca amb la tradició acadèmica per explorar formes innovadores. Això inclou l'impressionisme, el cubisme i altres moviments que redefineixen la forma i la representació artística.</p>\n";
+    fitxer << "        <div class=\"activity\">\n";
+    fitxer << "            <p><strong>Activitat:</strong> Crea la teva pròpia obra d'art inspirada en el cubisme. Experimenta amb formes geomètriques i colors.</p>\n";
+    fitxer << "        </div>\n";
+    fitxer << "    </div>\n";
+
+    fitxer << "</body>\n";
+    fitxer << "</html>\n";
+
+    fitxer.close();
+    std::cout << "Pàgina d'història de l'art amb imatges i activitats creada com a 'historia_de_lart.html'!" << std::endl;
+}
+
+int main() {
+    generarPaginaHistoriaDeLArt();
+    return 0;
+}
